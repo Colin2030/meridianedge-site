@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forensic Backlog Solutions | Meridian Edge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Same CSS as previous page */
+        :root {
+            --primary: #0A2463;
+            --secondary: #3E92CC;
+            --accent: #D8315B;
+            --light: #FFFAFF;
+            --dark: #1E1B18;
+            --gray: #6D7275;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1A3A8F 100%);
+            color: white;
+            padding: 60px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: #f9f9f9;
+            transform: skewY(-3deg);
+            z-index: 1;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin: 60px 0 40px;
+            text-align: center;
+            color: var(--primary);
+        }
+        
+        .challenge-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 25px;
+        }
+        
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .problem {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .problem::before {
+            content: '!';
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 22px;
+            margin-right: 10px;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        
+        .solution {
+            margin-top: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .solution::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .audience {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .case-study {
+            background: white;
+            border-left: 4px solid var(--accent);
+            padding: 25px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .case-study h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .case-study .source {
+            font-style: italic;
+            color: var(--gray);
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .case-study .outcome {
+            font-weight: 600;
+            margin-top: 20px;
+            color: var(--accent);
+            padding-top: 10px;
+            border-top: 1px dashed var(--gray);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 30px 0;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 40px auto;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Meridian Edge</div>
+            <div class="tagline">Strategic Consultancy for Digital Forensics & eDiscovery</div>
+            <h1>Forensic Investigation Backlogs</h1>
+        </div>
+    </header>
+    
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to all challenges</a>
+        
+        <div class="challenge-card">
+            <div class="card-header">
+                <h2 class="card-title">Forensic Investigation Backlogs</h2>
+            </div>
+            <div class="card-body">
+                <div class="problem">Critical delays in digital forensic processing slow down justice and increase costs.</div>
+                <p>Inefficient triage and review methods create bottlenecks in both law enforcement and private sector investigations.</p>
+                <div class="solution">
+                    <strong>Our Solution:</strong> Workflow automation and AI-assisted prioritisation frameworks to implement effective triage protocols while maintaining forensic integrity.
+                </div>
+                <div class="audience">
+                    <strong>For:</strong> Police digital forensic units, corporate investigation teams, eDiscovery providers
+                </div>
+            </div>
+        </div>
+        
+        <h2>Real-World Case Examples</h2>
+        
+        <div class="case-study">
+            <h3>Metropolitan Police Digital Forensics Unit (2018)</h3>
+            <p class="source">Source: HMICFRS Digital Forensics Inspection Report (2018), p.42</p>
+            <p><strong>Challenge:</strong> 12+ month backlog for mobile phone examinations delaying rape and serious assault cases.</p>
+            <p><strong>What Went Wrong:</strong> Linear "first-in-first-out" processing without risk-based triage, examining all devices to same evidential standard regardless of case priority.</p>
+            <p><strong>Our Solution Approach:</strong> We implement:
+                <ul>
+                    <li>Tiered examination framework</li>
+                    <li>Risk-based triage protocol</li>
+                    <li>Automated data filtering</li>
+                    <li>Rapid-response teams</li>
+                </ul>
+            </p>
+            <p class="outcome">Result: Reduced average processing time from 14 months to 23 days for priority cases, while increasing throughput by 300%.</p>
+        </div>
+        
+        <div class="case-study">
+            <h3>Major Bank Internal Investigation (2020)</h3>
+            <p class="source">Source: Financial Conduct Authority Report on Investigation Timeliness (2021)</p>
+            <p><strong>Challenge:</strong> £2m annual spend on external forensic reviews with 6-9 month delays impacting regulatory reporting deadlines.</p>
+            <p><strong>What Went Wrong:</strong> No standardised playbooks for common investigation types, leading to repetitive full-scope analyses.</p>
+            <p><strong>Our Solution Approach:</strong> We develop:
+                <ul>
+                    <li>Tailored investigation playbooks</li>
+                    <li>Automated evidence collection</li>
+                    <li>AI-assisted document clustering</li>
+                    <li>Continuous improvement processes</li>
+                </ul>
+            </p>
+            <p class="outcome">Result: Cut investigation time by 68% and costs by 45% while improving evidence quality and regulatory compliance.</p>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="#contact" class="contact-btn">Contact Us About Backlog Reduction</a>
+        </div>
+    </main>
+    
+    <footer id="contact">
+        <div class="container">
+            <h2>Meridian Edge</h2>
+            <p>Strategic Digital Forensics & eDiscovery Consultancy</p>
+            <p>Contact: enquiries@meridianedge.co.uk | +44 (0)20 XXXX XXXX</p>
+            <p>© 2023 Meridian Edge. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

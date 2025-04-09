@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meridian Edge | Strategic Digital Forensics Consultancy</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&amp;family=Playfair+Display:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --primary: #0A2463;
+            --secondary: #3E92CC;
+            --accent: #D8315B;
+            --light: #FFFAFF;
+            --dark: #1E1B18;
+            --gray: #6D7275;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1A3A8F 100%);
+            color: white;
+            padding: 60px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: #f9f9f9;
+            transform: skewY(-3deg);
+            z-index: 1;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin: 60px 0 40px;
+            text-align: center;
+            color: var(--primary);
+        }
+        
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+        }
+        
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .challenge-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .challenge-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 25px;
+        }
+        
+        .card-header a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .card-header a:hover {
+            text-decoration: underline;
+        }
+        
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .problem {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .problem::before {
+            content: '!';
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 22px;
+            margin-right: 10px;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        
+        .solution {
+            margin-top: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .solution::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .audience {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f4f8;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .audience strong {
+            color: var(--primary);
+        }
+        
+        .learn-more {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 2px;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 40px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .contact-btn:hover {
+            background-color: #c2254d;
+        }
+        
+        @media (max-width: 768px) {
+            .challenges-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+<div class="container">
+<div class="logo">Meridian Edge</div>
+<div class="tagline">Strategic Consultancy for Digital Forensics &amp; eDiscovery</div>
+<h1>Solving Complex Challenges in Digital Investigations</h1>
+</div>
+</header>
+<main class="container">
+<div class="intro">
+<p>Meridian Edge provides strategic advisory services to UK law enforcement, regulators, and private legal practices facing complex challenges in digital forensics and electronic discovery. We bridge the gap between technical operations and strategic outcomes.</p>
+</div>
+<h2>Our Strategic Challenge Areas</h2>
+<div class="challenges-grid">
+<!-- Challenge 1 -->
+<div class="challenge-card">
+<div class="card-header">
+<h3 class="card-title"><a href="large-scale-disclosure.html">Large-Scale Digital Disclosure Compliance</a></h3>
+</div>
+<div class="card-body">
+<div class="problem">Organisations struggle with cost-effective, efficient, and legally compliant disclosure processes when handling massive??? volumes of digital evidence.</div>
+<p>Poor management risks failed prosecutions, sanctions, or wrongful convictions due to missed material under CPIA 1996 and Criminal Procedure Rules.</p>
+<div class="solution">
+<strong>Our Solution:</strong> End-to-end disclosure strategy from data collection to courtroom presentation, ensuring compliance with Attorney General's Guidelines and judiciary expectations.
+                    </div>
+<div class="audience">
+<strong>For:</strong> Police disclosure officers, CPS, corporate legal teams handling litigation
+                    </div>
+<a class="learn-more" href="large-scale-disclosure.html">Learn more with case examples →</a>
+</div>
+</div>
+<!-- Challenge 2 -->
+<div class="challenge-card">
+<div class="card-header">
+<h3 class="card-title"><a href="fsr-compliance.html">FSR Code of Practice Compliance</a></h3>
+</div>
+<div class="card-body">
+<div class="problem">Digital forensic units lack auditable processes compliant with FSR's ISO 17025 standards.</div>
+<p>This risks evidence being ruled inadmissible and undermines confidence in digital forensic outputs.</p>
+<div class="solution">
+<strong>Our Solution:</strong> Gap analysis and compliance road map for forensic labs and eDiscovery teams, covering validation, proficiency testing, and quality management systems.
+                    </div>
+<div class="audience">
+<strong>For:</strong> Police digital forensic units, private forensic providers, FSR-regulated labs
+                    </div>
+<a class="learn-more" href="fsr-compliance.html">Learn more with case examples →</a>
+</div>
+</div>
+<!-- Challenge 3 -->
+<div class="challenge-card">
+<div class="card-header">
+<h3 class="card-title"><a href="forensic-backlogs.html">Forensic Investigation Backlogs</a></h3>
+</div>
+<div class="card-body">
+<div class="problem">Critical delays in digital forensic processing slow down justice and increase costs.</div>
+<p>Inefficient triage and review methods create bottlenecks in both law enforcement and private sector investigations.</p>
+<div class="solution">
+<strong>Our Solution:</strong> Workflow automation and AI-assisted prioritisation frameworks to implement effective triage protocols while maintaining forensic integrity.
+                    </div>
+<div class="audience">
+<strong>For:</strong> Police digital forensic units, corporate investigations teams, eDiscovery providers
+                    </div>
+<a class="learn-more" href="forensic-backlogs.html">Learn more with case examples →</a>
+</div>
+</div>
+<!-- Challenge 4 -->
+<div class="challenge-card">
+<div class="card-header">
+<h3 class="card-title"><a href="technology-platforms.html">Technology Platform Design</a></h3>
+</div>
+<div class="card-body">
+<div class="problem">Outdated, siloed tech stacks lead to high costs, slow processing, and compliance risks.</div>
+<p>Legacy forensic tools and disjointed eDiscovery software hinder efficient operations.</p>
+<div class="solution">
+<strong>Our Solution:</strong> Architecture review and future-proof platform design advising on integrated tools, cloud migration, and AI-enhanced analysis to improve speed and accuracy.
+                    </div>
+<div class="audience">
+<strong>For:</strong> Police ICT teams, forensic service providers, legal tech departments
+                    </div>
+<a class="learn-more" href="technology-platforms.html">Learn more with case examples →</a>
+</div>
+</div>
+<!-- Challenge 5 -->
+<div class="challenge-card">
+<div class="card-header">
+<h3 class="card-title"><a href="team-design.html">Forensic Team Design &amp; Leadership</a></h3>
+</div>
+<div class="card-body">
+<div class="problem">Skill gaps and poor leadership structures hinder forensic team performance.</div>
+<p>Inefficient collaboration between tech experts, legal teams, and investigators reduces effectiveness.</p>
+<div class="solution">
+<strong>Our Solution:</strong> Team design and leadership training optimising hiring strategies, role specialisation, and agile workflows to enhance forensic outcomes.
+                    </div>
+<div class="audience">
+<strong>For:</strong> Digital forensic unit managers, corporate security leaders, investigation team leads
+                    </div>
+<a class="learn-more" href="team-design.html">Learn more with case examples →</a>
+</div>
+</div>
+<!-- Challenge 6 -->
+<div class="challenge-card">
+<div class="card-header">
+<h3 class="card-title"><a href="evidence-admissibility.html">Digital Evidence Admissibility</a></h3>
+</div>
+<div class="card-body">
+<div class="problem">Increasing defence challenges over evidence authenticity and forensic methodology.</div>
+<p>Chain of custody issues and technical challenges undermine prosecutions and legal cases.</p>
+<div class="solution">
+<strong>Our Solution:</strong> Expert advisory on evidence integrity ensuring metadata preservation, audit trails, and expert testimony readiness to withstand legal scrutiny.
+                    </div>
+<div class="audience">
+<strong>For:</strong> Prosecutors, defence lawyers, corporate legal teams, expert witnesses
+                    </div>
+<a class="learn-more" href="evidence-admissibility.html">Learn more with case examples →</a>
+</div>
+</div>
+
+<div class="challenge-card">
+<div class="card-header">
+<h3 class="card-title"><a href="MeridianEdge_Big4_OnePager.html">Big 4 Forensic Collaboration</a></h3>
+</div>
+<div class="card-body">
+<div class="problem">Big 4 forensic teams face scaling and capability constraints in complex digital cases.</div>
+<p>Meridian Edge offers subcontractable, niche advisory support to strengthen investigations and compliance outcomes.</p>
+<div class="solution">
+<strong>Our Solution:</strong> Strategic partnerships for eDiscovery, disclosure, FSR audits, and forensic workflow design.
+        </div>
+<div class="audience">
+<strong>For:</strong> Deloitte, PwC, KPMG, EY – Forensic, Legal, and Risk advisory divisions
+        </div>
+<a class="learn-more" href="MeridianEdge_Big4_OnePager.html">Learn more →</a>
+</div>
+</div>
+</div>
+<div style="text-align: center;">
+<a class="contact-btn" href="#contact">Contact us (to discuss your challenges)</a>
+</div>
+</main>
+<footer id="contact">
+<div class="container">
+<h2>Meridian Edge</h2>
+<p>Strategic Digital Forensics &amp; eDiscovery Consultancy</p>
+<p>Contact: hello@meridianedge.co.uk | +44 (0)20 XXXXXXXX</p>
+<p>© 2025 Meridian Edge Ltd. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>
